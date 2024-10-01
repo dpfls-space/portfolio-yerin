@@ -11,4 +11,5 @@ interface ProjectRepository : JpaRepository<Project, Long> {
 
     fun findAllByIsActive(isActive: Boolean) :List<Project>
 
+    override fun findById(id: Long): Optional<Project>
 }
