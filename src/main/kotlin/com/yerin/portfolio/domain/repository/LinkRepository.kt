@@ -1,11 +1,10 @@
 package com.yerin.portfolio.domain.repository
 
-import com.yerin.portfolio.domain.entity.Achievement
-import com.yerin.portfolio.domain.entity.Experience
-import com.yerin.portfolio.domain.entity.HttpInterface
-import com.yerin.portfolio.domain.entity.Link
+import com.yerin.portfolio.domain.entity.*
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface LinkRepository : JpaRepository<Link, Long> {
-    
+
+    // select * from Link where is Active = :isActive
+    fun findAllByIsActive(isActive: Boolean) :List<Link>
 }
