@@ -1,4 +1,8 @@
 package com.yerin.portfolio.presentaion.dto
 
-class AchievementDTO {
-}
+data class AchievementDTO(
+    val title: String,
+    val description: String,
+    val host: String,
+    val achievedDate: String?
+)
