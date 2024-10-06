@@ -1,8 +1,8 @@
 package com.yerin.portfolio.domain.repository
 
-import com.yerin.portfolio.domain.entity.*
+import com.yerin.portfolio.domain.entity.ProjectSkill
 import org.springframework.data.jpa.repository.JpaRepository
-import java.util.Optional
+import java.util.*
 
 interface ProjectSkillRepository : JpaRepository<ProjectSkill, Long> {
 

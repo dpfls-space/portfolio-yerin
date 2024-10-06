@@ -1,7 +1,5 @@
 package com.yerin.portfolio.domain.repository
 
-import com.yerin.portfolio.domain.entity.Achievement
-import com.yerin.portfolio.domain.entity.Experience
 import com.yerin.portfolio.domain.entity.HttpInterface
 import org.springframework.data.jpa.repository.JpaRepository
 import java.time.LocalDateTime

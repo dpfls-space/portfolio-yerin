@@ -1,12 +1,9 @@
 package com.yerin.portfolio.domain.repository
 
-import com.yerin.portfolio.domain.entity.Achievement
-import com.yerin.portfolio.domain.entity.Experience
-import com.yerin.portfolio.domain.entity.HttpInterface
 import com.yerin.portfolio.domain.entity.Project
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
-import java.util.Optional
+import java.util.*
 
 interface ProjectRepository : JpaRepository<Project, Long> {
 

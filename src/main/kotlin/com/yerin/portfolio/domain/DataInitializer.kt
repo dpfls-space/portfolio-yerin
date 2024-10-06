@@ -4,7 +4,6 @@ import com.yerin.portfolio.domain.constant.SkillType
 import com.yerin.portfolio.domain.entity.*
 import com.yerin.portfolio.domain.repository.*
 import jakarta.annotation.PostConstruct
-import org.hibernate.engine.transaction.internal.jta.JtaStatusHelper
 import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 import java.time.LocalDate

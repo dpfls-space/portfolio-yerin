@@ -1,6 +1,6 @@
 package com.yerin.portfolio.domain.repository
 
-import com.yerin.portfolio.domain.entity.*
+import com.yerin.portfolio.domain.entity.Link
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface LinkRepository : JpaRepository<Link, Long> {
