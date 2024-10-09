@@ -25,17 +25,31 @@ class DataInitializer(
 
         val achievements = mutableListOf<Achievement>(
             Achievement(
-                title = "2022 catkao 해커톤 최우수상",
-                description = "고양이 쇼핑몰 검색 서비스의 아키텍처, 데이터 모델링",
-                host = "캣카오",
-                achievedDate = LocalDate.of(2022, 8, 24),
+                title = "SQL 개발자",
+                description = "SQLD",
+                host = "한국데이터산업진흥원",
+                achievedDate = LocalDate.of(2024, 9, 20),
                 isActive = true
             ),
             Achievement(
-                title = "정보처리기사",
-                description = "자료구조, 운영체제, 알고리즘, 데이터베이스 등",
+                title = "정보처리기능사",
+                description = "필기 합격",
                 host = "한국산업인력공단",
-                achievedDate = LocalDate.of(2020, 9, 30),
+                achievedDate = LocalDate.of(2024, 6, 30),
+                isActive = true
+            ),
+            Achievement(
+                title = "전산세무 2급",
+                description = "최종 합격",
+                host = "한국세무사협회",
+                achievedDate = LocalDate.of(2021, 8, 31),
+                isActive = true
+            ),
+            Achievement(
+                title = "전산회계 1급",
+                description = "최종 합격",
+                host = "한국세무사협회",
+                achievedDate = LocalDate.of(2021, 4, 30),
                 isActive = true
             )
         )
@@ -51,14 +65,61 @@ class DataInitializer(
         introductionRepository.saveAll(introductions)
 
         val links = mutableListOf<Link>(
-            Link(name = "Github", content = "https://github.com/dpfls-space", isActive = true),
-            Link(name = "velog", content = "https://velog.io/@38265ye/posts", isActive = true)
+            Link(name = "Github", content = "https://github.com/dpfls-space", isActive = true)
         )
 
         linkRepository.saveAll(links)
 
         val experience1 = Experience(
-            title = "캣홀릭대학교",
+            title = "공공데이터 융합 자바개발자 양성과정",
+            description = "KH정보교육원",
+            startYear = 2024,
+            startMonth = 3,
+            endYear = 2024,
+            endMonth = 9,
+            isActive = true
+        )
+
+        experience1.addDetails(
+            mutableListOf(
+                ExperienceDetail(content = "24.08.20 성취도우수상 수상", isActive = true)
+            )
+        )
+
+        val experience2 =Experience(
+            title = "종로인명장애인자립생활센터",
+            description = "총무기획팀 주임",
+            startYear = 2021,
+            startMonth = 8,
+            endYear = 2024,
+            endMonth = 2,
+            isActive = true
+        )
+
+        experience2.addDetails(
+            mutableListOf(
+                ExperienceDetail(content = "회계 및 세무, 사업 운영", isActive = true)
+            )
+        )
+
+        val experience3 =Experience(
+            title = "(주)구디소프트",
+            description = "회계팀",
+            startYear = 2021,
+            startMonth = 2,
+            endYear = 2021,
+            endMonth = 7,
+            isActive = true
+        )
+
+        experience3.addDetails(
+            mutableListOf(
+                ExperienceDetail(content = "회계 및 세무", isActive = true)
+            )
+        )
+
+        val experience4 =Experience(
+            title = "국가평생교육원 학점은행",
             description = "경영학 전공",
             startYear = 2019,
             startMonth = 12,
@@ -67,67 +128,26 @@ class DataInitializer(
             isActive = true
         )
 
-        experience1.addDetails(
+        experience4.addDetails(
             mutableListOf(
                 ExperienceDetail(content = "GPA 3.9/4.5", isActive = true)
-            )
-        )
-
-        val experience2 =Experience(
-            title = "주식회사 캣카오",
-            description = "소셜서비스팀 백엔드 개발자",
-            startYear = 2022,
-            startMonth = 9,
-            endYear = null,
-            endMonth = null,
-            isActive = true
-        )
-
-        experience2.addDetails(
-            mutableListOf(
-                ExperienceDetail(content = "성취도우수상 수상", isActive = true)
             )
         )
 
         experienceRepository.saveAll(mutableListOf(experience1, experience2))
 
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
-        val spring = Skill(name = "Spring", type = SkillType.LANGUAGE.name, isActive = true)
-        val oracle = Skill(name = "oracle", type = SkillType.LANGUAGE.name, isActive = true)
-        val springBoot = Skill(name = "SpringBoot", type = SkillType.LANGUAGE.name, isActive = true)
+        val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
+        val oracle = Skill(name = "oracle", type = SkillType.DATABASE.name, isActive = true)
+        val springBoot = Skill(name = "SpringBoot", type = SkillType.FRAMEWORK.name, isActive = true)
         val javascript = Skill(name = "JavaScript", type = SkillType.LANGUAGE.name, isActive = true)
         val jquery = Skill(name = "Jquery", type = SkillType.LANGUAGE.name, isActive = true)
         val jsp = Skill(name = "JSP", type = SkillType.LANGUAGE.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, spring, oracle, springBoot, javascript, jquery, jsp))
+        val eclipse = Skill(name = "Eclipse", type = SkillType.TOOL.name, isActive = true)
+        skillRepository.saveAll(mutableListOf(java, spring, oracle, springBoot, javascript, jquery, jsp, eclipse))
+
 
         val project1 = Project(
-            name = "혼밥심",
-            description = "혼밥러를 위한 레시피 공유 및 커뮤니티 서비스",
-            startYear = 2024,
-            startMonth = 6,
-            endYear = 2024,
-            endMonth = 7,
-            isActive = true
-        )
-
-        project1.addDetails(
-            mutableListOf(
-                ProjectDetail(content = "회원가입, 회원정보 수정, 회원탈퇴", url = null, isActive = true),
-                ProjectDetail(content = "헤더 메뉴 디자인 및 기능", url = null, isActive = true),
-                ProjectDetail(content = "Github Repository", url = "https://github.com/dpfls-space/Honbapsim", isActive = true)
-            )
-        )
-
-        project1.skills.addAll(
-            mutableListOf(
-                ProjectSkill(project = project1, skill = java),
-                ProjectSkill(project = project1, skill = spring),
-                ProjectSkill(project = project1, skill = oracle),
-                ProjectSkill(project = project1, skill = javascript)
-            )
-        )
-
-        val project2 = Project(
             name = "여기",
             description = "여행족들을 위한 여행 일정 작성, 관광지 조회, 플래너의 맞춤 일정, 커뮤니티 서비스",
             startYear = 2024,
@@ -145,10 +165,37 @@ class DataInitializer(
             )
         )
 
+        project1.skills.addAll(
+            mutableListOf(
+                ProjectSkill(project = project1, skill = java),
+                ProjectSkill(project = project1, skill = springBoot),
+                ProjectSkill(project = project1, skill = oracle),
+                ProjectSkill(project = project1, skill = javascript)
+            )
+        )
+
+        val project2 = Project(
+            name = "혼밥심",
+            description = "혼밥러를 위한 레시피 공유 및 커뮤니티 서비스",
+            startYear = 2024,
+            startMonth = 6,
+            endYear = 2024,
+            endMonth = 7,
+            isActive = true
+        )
+
+        project2.addDetails(
+            mutableListOf(
+                ProjectDetail(content = "회원가입, 회원정보 수정, 회원탈퇴", url = null, isActive = true),
+                ProjectDetail(content = "헤더 메뉴 디자인 및 기능", url = null, isActive = true),
+                ProjectDetail(content = "Github Repository", url = "https://github.com/dpfls-space/Honbapsim", isActive = true)
+            )
+        )
+
         project2.skills.addAll(
             mutableListOf(
                 ProjectSkill(project = project2, skill = java),
-                ProjectSkill(project = project2, skill = springBoot),
+                ProjectSkill(project = project2, skill = spring),
                 ProjectSkill(project = project2, skill = oracle),
                 ProjectSkill(project = project2, skill = javascript)
             )
