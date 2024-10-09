@@ -1,9 +1,13 @@
 package com.yerin.portfolio.admin.context.link.service
 
+import com.yerin.portfolio.admin.context.link.form.LinkForm
 import com.yerin.portfolio.admin.data.TableDTO
 import com.yerin.portfolio.domain.entity.Link
 import com.yerin.portfolio.domain.repository.LinkRepository
+import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
+@Service
 class AdminLinkService(
     private val linkRepository: LinkRepository
 ) {
@@ -12,5 +16,17 @@ class AdminLinkService(
         val entities = linkRepository.findAll()
 
         return TableDTO.from(classInfo, entities)
+    }
+
+    @Transactional
+    fun save(form: LinkForm) {
+        val link = form.toEntity()
+        linkRepository.save(link)
+    }
+
+    @Transactional
+    fun update(id: Long, form: LinkForm) {
+        val link = form.toEntity()
+        linkRepository.save(link)
     }
 }
