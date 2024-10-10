@@ -1,6 +1,5 @@
 package com.yerin.portfolio.admin.context.project.form
 
-import com.yerin.portfolio.domain.entity.ExperienceDetail
 import com.yerin.portfolio.domain.entity.ProjectDetail
 import jakarta.validation.constraints.NotBlank
 
