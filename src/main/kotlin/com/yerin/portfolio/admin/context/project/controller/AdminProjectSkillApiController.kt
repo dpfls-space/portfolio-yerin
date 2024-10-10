@@ -1,12 +1,8 @@
 package com.yerin.portfolio.admin.context.project.controller
 
-import com.yerin.portfolio.admin.context.project.form.ProjectForm
 import com.yerin.portfolio.admin.context.project.form.ProjectSkillForm
-import com.yerin.portfolio.admin.context.project.service.AdminProjectService
 import com.yerin.portfolio.admin.context.project.service.AdminProjectSkillService
 import com.yerin.portfolio.admin.data.ApiResponse
-import com.yerin.portfolio.admin.data.TableDTO
-import com.yerin.portfolio.domain.entity.ProjectSkill
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
