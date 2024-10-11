@@ -10,6 +10,7 @@
     <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${table})}"></div>
     <th:block th:if="${hasDetails}">
       <div th:replace="~{admin/fragments/fragment-datatable :: datatable(${detailTable})}"></div>
+      <div th:replace="~{admin/fragments/fragment-modal-form :: modalForm(${formElements})}"></div>
     </th:block>
 
   </main><!-- End #main -->
