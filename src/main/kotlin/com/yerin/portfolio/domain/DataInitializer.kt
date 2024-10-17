@@ -143,9 +143,9 @@ class DataInitializer(
         val springBoot = Skill(name = "SpringBoot", type = SkillType.FRAMEWORK.name, isActive = true)
         val javascript = Skill(name = "JavaScript", type = SkillType.LANGUAGE.name, isActive = true)
         val jquery = Skill(name = "Jquery", type = SkillType.LANGUAGE.name, isActive = true)
-        val jsp = Skill(name = "JSP", type = SkillType.LANGUAGE.name, isActive = true)
         val eclipse = Skill(name = "Eclipse", type = SkillType.TOOL.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, spring, oracle, springBoot, javascript, jquery, jsp, eclipse))
+        val intelliJ = Skill(name = "IntelliJ", type = SkillType.TOOL.name, isActive = true)
+        skillRepository.saveAll(mutableListOf(java, spring, oracle, springBoot, javascript, jquery, eclipse, intelliJ))
 
 
         val project1 = Project(
