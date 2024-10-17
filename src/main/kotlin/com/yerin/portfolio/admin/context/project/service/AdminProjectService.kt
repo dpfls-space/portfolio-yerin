@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-class AdminProjectService (
+class AdminProjectService(
     private val projectRepository: ProjectRepository
 ) {
 
@@ -21,10 +21,10 @@ class AdminProjectService (
         return TableDTO.from(classInfo, entities, "details", "skills")
     }
 
-    fun getProjectDetailTable(id:Long?): TableDTO {
+    fun getProjectDetailTable(id: Long?): TableDTO {
         val classInfo = ProjectDetail::class
         val entities = if (id != null) projectRepository.findById(id)
-            .orElseThrow { throw AdminBadRequestException("ID ${id} 에 해당하는 데이터를 찾을 수가 없습니다.")}
+            .orElseThrow { throw AdminBadRequestException("ID ${id}에 해당하는 데이터를 찾을 수 없습니다.") }
             .details else emptyList()
 
         return TableDTO.from(classInfo, entities)
@@ -32,6 +32,7 @@ class AdminProjectService (
 
     @Transactional
     fun save(form: ProjectForm) {
+
         val projectDetails = form.details
             ?.map { detail -> detail.toEntity() }
             ?.toMutableList()
@@ -43,9 +44,10 @@ class AdminProjectService (
     }
 
     @Transactional
-    fun update(id:Long, form: ProjectForm) {
+    fun update(id: Long, form: ProjectForm) {
+
         val project = projectRepository.findById(id)
-            .orElseThrow { throw AdminBadRequestException("ID ${id} 에 해당하는 데이터를 찾을 수가 없습니다.") }
+            .orElseThrow { throw AdminBadRequestException("ID ${id}에 해당하는 데이터를 찾을 수 없습니다.") }
 
         project.update(
             name = form.name,
@@ -70,6 +72,5 @@ class AdminProjectService (
                 project.details.add(it.toEntity())
             }
         }
-
     }
 }

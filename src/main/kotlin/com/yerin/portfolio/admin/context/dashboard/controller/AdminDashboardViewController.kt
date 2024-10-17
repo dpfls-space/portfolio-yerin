@@ -16,7 +16,7 @@ class AdminDashboardViewController(
     @GetMapping
     fun index(model: Model): String {
 
-        val table = adminDashboardService.getHttpInterfaceTable()
+        var table = adminDashboardService.getHttpInterfaceTable()
         model.addAttribute("table", table)
 
         val total = adminDashboardService.countVisitorsTotal()
@@ -35,7 +35,7 @@ class AdminDashboardViewController(
             Pair("pageName", "Dashboard"),
             Pair("editable", false),
             Pair("deletable", false),
-            Pair("hasDetails", false)
+            Pair("hasDetails", false),
         )
         model.addAllAttributes(pageAttributes)
 
