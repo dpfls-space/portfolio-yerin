@@ -44,3 +44,7 @@ kotlin {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.bootJar {
+	archiveFileName.set("yerin-portfolio-ver1.jar")
+}

@@ -6,8 +6,8 @@ VOLUME /tmp
 
 EXPOSE 8080
 
-ARG JAR_FILE=build/libs/portfolio-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/yerin-portfolio-ver1.jar
 
-ADD ${JAR_FILE} portfolio-yerin.jar
+ADD ${JAR_FILE} yerin-portfolio-ver1.jar
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/portfolio-yerin.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/yerin-portfolio-ver1.jar"]
