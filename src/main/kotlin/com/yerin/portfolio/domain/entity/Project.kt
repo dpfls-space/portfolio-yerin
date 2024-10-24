@@ -40,7 +40,7 @@ class Project(
     var skills : MutableList<ProjectSkill> = mutableListOf()
 
     fun getEndYearMonth(): String{
-        if(endYear == null || endMonth == null){
+        if (endYear == null || endMonth == null){
             return "Present"
         }
 
@@ -59,7 +59,7 @@ class Project(
     }
 
     fun addDetails(details: MutableList<ProjectDetail>?) {
-        if(details != null){
+        if (details != null){
             this.details.addAll(details)
         }
     }

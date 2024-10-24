@@ -34,7 +34,7 @@ class AdminInterceptor : HandlerInterceptor {
                 name = "Projects",
                 pages = listOf<PageDTO>(
                     PageDTO(name = "Project", url = "/admin/project"),
-                    PageDTO(name = "ProjectSkill", url = "/admin/projectSkill")
+                    PageDTO(name = "ProjectSkill", url = "/admin/project/skill")
                 )
             )
         )

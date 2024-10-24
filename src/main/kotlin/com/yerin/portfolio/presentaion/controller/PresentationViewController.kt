@@ -44,4 +44,9 @@ class PresentationViewController(
 
         return "presentation/projects"
     }
+
+    @GetMapping("/projectsDetails")
+    fun projectDetails(model: Model): String {
+        return "presentation/projectsDetails"
+    }
 }

@@ -17,7 +17,7 @@ class DataInitializer(
     private val skillRepository: SkillRepository,
     private val projectRepository: ProjectRepository,
     private val experienceRepository: ExperienceRepository,
-    private val accountRepository: AccountRepository
+    private val accountRepository: AccountRepository,
 ) {
     @PostConstruct
     fun initializeDate() {
@@ -162,7 +162,8 @@ class DataInitializer(
             mutableListOf(
                 ProjectDetail(content = "여행 일정 작성", url = null, isActive = true),
                 ProjectDetail(content = "javaScript, aJax 를 활용한 비동기 화면 구현", url = null, isActive = true),
-                ProjectDetail(content = "Github Repository", url = "https://github.com/dpfls-space/TripRecord", isActive = true)
+                ProjectDetail(content = "Github Repository", url = "https://github.com/dpfls-space/TripRecord", isActive = true),
+                ProjectDetail(content = "detail", url = "/projectsDetails", isActive = true)
             )
         )
 
